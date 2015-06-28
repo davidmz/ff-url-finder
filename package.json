@@ -1,0 +1,18 @@
+{
+  "name": "ff-url-finder",
+  "version": "0.1.0",
+  "description": "Posts/comments text parser for FreeFeed.net",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha test"
+  },
+  "author": "David Mzareulyan <david@hiero.ru> (https://github.com/davidmz)",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^3.0.0",
+    "mocha": "^2.2.5"
+  },
+  "dependencies": {
+    "punycode": "^1.3.2"
+  }
+}
