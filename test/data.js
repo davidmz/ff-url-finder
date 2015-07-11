@@ -117,6 +117,17 @@ module.exports = [
             {type: "email", text: "bb@замкинаокна.рф", address: "bb@xn--80aaazglcmlcj.xn--p1ai"},
         ]
     },
+    {
+        text: "aa http://🍕💩.ws/🍖🍓🍒🍱📦👑🎨🎷 bb http://xn--vi8hiv.ws/%F0%9F%8D%96%F0%9F%8D%93%F0%9F%8D%92%F0%9F%8D%B1%F0%9F%93%A6%F0%9F%91%91%F0%9F%8E%A8%F0%9F%8E%B7 cc",
+        result: [
+            {type: "text", text: "aa "},
+            {type: "link", text: "http://🍕💩.ws/🍖🍓🍒🍱📦👑🎨🎷", url: "http://🍕💩.ws/🍖🍓🍒🍱📦👑🎨🎷"},
+            {type: "text", text: " bb "},
+            {type: "link", text: "http://🍕💩.ws/🍖🍓🍒🍱📦👑🎨🎷", url: "http://xn--vi8hiv.ws/%F0%9F%8D%96%F0%9F%8D%93%F0%9F%8D%92%F0%9F%8D%B1%F0%9F%93%A6%F0%9F%91%91%F0%9F%8E%A8%F0%9F%8E%B7"},
+            {type: "text", text: " cc"},
+        ]
+    },
+
 
 
     // linkhum cases
