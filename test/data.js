@@ -84,7 +84,7 @@ module.exports = [
     {
         text: "https://map.what3words.com/биоробот.мясной.малиновый",
         result: [
-            {type: "link", text: "https://map.what3words.com/биоробот.мясной.малиновый", url: "https://map.what3words.com/биоробот.мясной.малиновый"},
+            {type: "link", text: "https://map.what3words.com/биоробот.мясной.малиновый", url: "https://map.what3words.com/биоробот.мясной.малиновый"}
         ]
     },
     {
@@ -93,20 +93,20 @@ module.exports = [
             {type: "text", text: "вот эти "},
             {type: "link", text: "http://замкинаокна.рф/p49195244-ogranichitel-otkryvaniya-okna.html/", url: "http://замкинаокна.рф/p49195244-ogranichitel-otkryvaniya-okna.html/"},
             {type: "text", text: " от этих "},
-            {type: "link", text: "замкинаокна.рф/p49838778-blokirator-okna-bsl.html", url: "http://xn--80aaazglcmlcj.xn--p1ai/p49838778-blokirator-okna-bsl.html"},
+            {type: "link", text: "замкинаокна.рф/p49838778-blokirator-okna-bsl.html", url: "http://xn--80aaazglcmlcj.xn--p1ai/p49838778-blokirator-okna-bsl.html"}
         ]
     },
     {
         text: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html",
         result: [
-            {type: "link", text: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html", url: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html"},
+            {type: "link", text: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html", url: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html"}
         ]
     },
     {
         text: "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2015)",
         // urldecode for humans
         result: [
-            {type: "link", text: "https://ru.wikipedia.org/wiki/Территория_(фильм,_2015)", url: "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2015)"},
+            {type: "link", text: "https://ru.wikipedia.org/wiki/Территория_(фильм,_2015)", url: "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2015)"}
         ]
     },
     {
@@ -114,17 +114,17 @@ module.exports = [
         result: [
             {type: "email", text: "aa@bb.ru", address: "aa@bb.ru"},
             {type: "text", text: " "},
-            {type: "email", text: "bb@замкинаокна.рф", address: "bb@xn--80aaazglcmlcj.xn--p1ai"},
+            {type: "email", text: "bb@замкинаокна.рф", address: "bb@xn--80aaazglcmlcj.xn--p1ai"}
         ]
     },
     {
-        text: "aa http://🍕💩.ws/🍖🍓🍒🍱📦👑🎨🎷 bb http://xn--vi8hiv.ws/%F0%9F%8D%96%F0%9F%8D%93%F0%9F%8D%92%F0%9F%8D%B1%F0%9F%93%A6%F0%9F%91%91%F0%9F%8E%A8%F0%9F%8E%B7 cc",
+        text: "aa http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7 bb http://xn--vi8hiv.ws/%F0%9F%8D%96%F0%9F%8D%93%F0%9F%8D%92%F0%9F%8D%B1%F0%9F%93%A6%F0%9F%91%91%F0%9F%8E%A8%F0%9F%8E%B7 cc",
         result: [
             {type: "text", text: "aa "},
-            {type: "link", text: "http://🍕💩.ws/🍖🍓🍒🍱📦👑🎨🎷", url: "http://🍕💩.ws/🍖🍓🍒🍱📦👑🎨🎷"},
+            {type: "link", text: "http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7", url: "http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7"},
             {type: "text", text: " bb "},
-            {type: "link", text: "http://🍕💩.ws/🍖🍓🍒🍱📦👑🎨🎷", url: "http://xn--vi8hiv.ws/%F0%9F%8D%96%F0%9F%8D%93%F0%9F%8D%92%F0%9F%8D%B1%F0%9F%93%A6%F0%9F%91%91%F0%9F%8E%A8%F0%9F%8E%B7"},
-            {type: "text", text: " cc"},
+            {type: "link", text: "http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7", url: "http://xn--vi8hiv.ws/%F0%9F%8D%96%F0%9F%8D%93%F0%9F%8D%92%F0%9F%8D%B1%F0%9F%93%A6%F0%9F%91%91%F0%9F%8E%A8%F0%9F%8E%B7"},
+            {type: "text", text: " cc"}
         ]
     },
 
@@ -174,7 +174,7 @@ module.exports = [
             {
                 type: "link",
                 text: "http://www.booking.com/searchresults.html?sid=79b5eeb441120b08fcd3ebe467b0a0b8;dcid=1;bb_asr=2&class_interval=1&csflt={}&dest_id=-2167973&dest_type=city&dtdisc=0&group_adults=2&group_children=0&hlrd=0&hyb_red=0&idf=1&inac=0&nha_red=0&no_rooms=1&offset=0&redirected_from_city=0&redirected_from_landmark=0&redirected_from_region=0&review_score_group=empty&score_min=0&si=ai,co,ci,re,di&src=index&ss=Lisbon, Lisbon Region, Portugal&ss_all=0&ss_raw=Lisbon&ssb=empty&sshis=0&",
-                url:  "http://www.booking.com/searchresults.html?sid=79b5eeb441120b08fcd3ebe467b0a0b8;dcid=1;bb_asr=2&class_interval=1&csflt=%7B%7D&dest_id=-2167973&dest_type=city&dtdisc=0&group_adults=2&group_children=0&hlrd=0&hyb_red=0&idf=1&inac=0&nha_red=0&no_rooms=1&offset=0&redirected_from_city=0&redirected_from_landmark=0&redirected_from_region=0&review_score_group=empty&score_min=0&si=ai,co,ci,re,di&src=index&ss=Lisbon,%20Lisbon%20Region,%20Portugal&ss_all=0&ss_raw=Lisbon&ssb=empty&sshis=0&",
+                url:  "http://www.booking.com/searchresults.html?sid=79b5eeb441120b08fcd3ebe467b0a0b8;dcid=1;bb_asr=2&class_interval=1&csflt=%7B%7D&dest_id=-2167973&dest_type=city&dtdisc=0&group_adults=2&group_children=0&hlrd=0&hyb_red=0&idf=1&inac=0&nha_red=0&no_rooms=1&offset=0&redirected_from_city=0&redirected_from_landmark=0&redirected_from_region=0&review_score_group=empty&score_min=0&si=ai,co,ci,re,di&src=index&ss=Lisbon,%20Lisbon%20Region,%20Portugal&ss_all=0&ss_raw=Lisbon&ssb=empty&sshis=0&"
             }
         ]
     },
@@ -213,7 +213,7 @@ module.exports = [
         result: [
             {type: "text", text: 'You are saying "go to '},
             {type: "link", text: "http://google.com/", url: "http://google.com/"},
-            {type: "text", text: '", like it is something bad!'},
+            {type: "text", text: '", like it is something bad!'}
         ]
     },
     {
@@ -236,31 +236,31 @@ module.exports = [
         ]
     },
     {
-        text: 'uri = Addressable::URI.parse("http://www.詹姆斯.com/"), why not?',
+        text: 'uri = Addressable::URI.parse("http://www.\u8A79\u59C6\u65AF.com/"), why not?',
         result: [
             {type: "text", text: "uri = Addressable::URI.parse(\""},
-            {type: "link", text: "http://www.詹姆斯.com/", url: "http://www.詹姆斯.com/"},
-            {type: "text", text: "\"), why not?"},
+            {type: "link", text: "http://www.\u8A79\u59C6\u65AF.com/", url: "http://www.\u8A79\u59C6\u65AF.com/"},
+            {type: "text", text: "\"), why not?"}
         ]
     },
     {
         text: 'anchors: https://github.com/octopress/ink#usage',
         result: [
             {type: "text", text: "anchors: "},
-            {type: "link", text: "https://github.com/octopress/ink#usage", url: "https://github.com/octopress/ink#usage"},
+            {type: "link", text: "https://github.com/octopress/ink#usage", url: "https://github.com/octopress/ink#usage"}
         ]
     },
     {
         text: 'Upcased HTTP://GOOGLE.COM',
         result: [
             {type: "text", text: "Upcased "},
-            {type: "link", text: "HTTP://GOOGLE.COM", url: "HTTP://GOOGLE.COM/"},
+            {type: "link", text: "HTTP://GOOGLE.COM", url: "HTTP://GOOGLE.COM/"}
         ]
     },
     {
         text: 'Skype bug  http://:',
         result: [
-            {type: "text", text: "Skype bug  http://:"},
+            {type: "text", text: "Skype bug  http://:"}
         ]
-    },
+    }
 ];
