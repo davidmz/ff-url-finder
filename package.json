@@ -1,6 +1,6 @@
 {
   "name": "ff-url-finder",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Posts/comments text parser for FreeFeed.net",
   "main": "index.js",
   "scripts": {
