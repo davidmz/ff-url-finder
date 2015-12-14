@@ -262,5 +262,13 @@ module.exports = [
         result: [
             {type: "text", text: "Skype bug  http://:"}
         ]
+    },
+    {
+        text: 'а так же www.ridero.ru. фотографирую ',
+        result: [
+            {type: "text", text: "а так же "},
+            {type: "link", text: "www.ridero.ru", url: "http://www.ridero.ru/"},
+            {type: "text", text: ". фотографирую "}
+        ]
     }
 ];

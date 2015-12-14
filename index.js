@@ -98,7 +98,7 @@ URLFinder.prototype.tokenize = function (text) {
         var f = {
             match: found[0],
             pos: found.index,
-            withProtocol: !!found[2],
+            withProtocol: !!found[2] && found[2].toLowerCase() !== "www.",
             type: "url"
         };
         if (found[6]) {
