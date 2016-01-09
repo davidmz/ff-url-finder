@@ -1,4 +1,5 @@
-var punycode = require('punycode');
+var punycode = require("punycode");
+var shorten = require("./shorten");
 
 var urlReString = "\\b(((https?|ftp):\\/\\/|www\\.)[^\\s<>]+|([a-zа-я0-9][a-zа-я0-9-]*\\.)+($TLD$xn--[a-z0-9]+)(?![a-zа-я0-9-])[^\\s<>]*)|([a-z0-9\\.\\&\\~\\!\\%_-]+@(?:[a-zа-я0-9-]+\\.)+[a-zа-я0-9-]+)\\b|@([a-z0-9]+(-[a-z0-9]+)*)";
 var finalPuncts = /[\x21-\x25\x27-\x2e\x3a-\x3f\x5b-\x60\x7b-\x7e\u2026]+$/; // Base latin punctuation except '/' and '&' include ellipsis
@@ -8,6 +9,8 @@ function URLFinder(tlDomains, localDomains) {
     this.localDomains = localDomains || [];
     this.urlRe = new RegExp(urlReString.replace("$TLD$", tldString), "ig");
 }
+
+URLFinder.shorten = shorten;
 
 URLFinder.prototype.parse = function (text) {
     var result = [],
