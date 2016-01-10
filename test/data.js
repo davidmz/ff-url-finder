@@ -276,5 +276,11 @@ module.exports = [
         result: [
             {type: "link", text: "https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-", url: "https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-"}
         ]
+    },
+    {
+        text: 'https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#',
+        result: [
+            {type: "link", text: "https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#", url: "https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#"}
+        ]
     }
 ];
