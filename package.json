@@ -1,6 +1,6 @@
 {
   "name": "ff-url-finder",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Posts/comments text parser for FreeFeed.net",
   "homepage": "https://github.com/davidmz/ff-url-finder",
   "repository": "davidmz/ff-url-finder",

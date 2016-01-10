@@ -270,5 +270,11 @@ module.exports = [
             {type: "link", text: "www.ridero.ru", url: "http://www.ridero.ru/"},
             {type: "text", text: ". фотографирую "}
         ]
+    },
+    {
+        text: 'https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-',
+        result: [
+            {type: "link", text: "https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-", url: "https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-"}
+        ]
     }
 ];
