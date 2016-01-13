@@ -44,7 +44,15 @@ module.exports = function (url, limit) {
     if (path) {
         parts = path.split("/");
         while (parts.length > 1) {
-            parts.pop();
+            var lastPart = parts.pop();
+            var dashParts = lastPart.split("-");
+            while (dashParts.length > 1) {
+                dashParts.pop();
+                href = buildHref(host, parts.join("/") + "/" + dashParts.join("-")) + "-\u2026";
+                if (href.length <= limit) {
+                    return proto + href;
+                }
+            }
             href = buildHref(host, parts.join("/")) + "/\u2026";
             if (href.length <= limit) {
                 return proto + href;
