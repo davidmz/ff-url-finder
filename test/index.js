@@ -18,6 +18,7 @@ describe('Shortener', function () {
     shortenTestData.forEach(function (url) {
         it('shortens `' + url + '`', function () {
             var shUrl = URLFinder.shorten(url, MAX_LEN);
+            // console.log(shUrl);
             var m = /^(https?:\/\/)?(.*)/i.exec(shUrl);
             var tail = m[2];
             // Хвост должен быть не длиннее лимита
@@ -28,8 +29,8 @@ describe('Shortener', function () {
                 shUrl.should.be.equal(url.substr(0, url.length - 1));
 
             } else if (shUrl.charAt(shUrl.length - 1) === "\u2026") {
-                // Если URL обрезан, то только после символа /?&#-
-                shUrl.charAt(shUrl.length - 2).should.match(/[\/?&#-]/);
+                // Если URL обрезан, то только после символа /?&#_-
+                shUrl.charAt(shUrl.length - 2).should.match(/[\/?&#_-]/);
                 var head = shUrl.substr(0, shUrl.length - 1);
                 // Часть до обрезки должна совпадать с началом урла
                 url.substr(0, head.length).should.be.equal(head);

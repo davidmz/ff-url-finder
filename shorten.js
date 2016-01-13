@@ -12,7 +12,7 @@ module.exports = function (url, limit) {
         path = m[3],
         query = m[4],
         hash = m[5],
-        parts,
+        parts, s, parts1,
         href = buildHref(host, path, query, hash);
 
     if (href.length <= limit) {
@@ -20,22 +20,8 @@ module.exports = function (url, limit) {
     }
 
     if (hash) {
-        var p1 = hash.indexOf("/"),
-            p2 = hash.indexOf("&"),
-            s = "";
-        if (p1 === -1 && p2 === -1) {
-            // nope
-        } else if (p1 === -1) {
-            s = "&";
-        } else if (p2 === -1) {
-            s = "/";
-        } else if (p1 < p2) {
-            s = "/";
-        } else {
-            s = "&";
-        }
-
-        if (s !== "") {
+        s = closestDivider(hash, ["/", "&"]);
+        if (s !== null) {
             parts = hash.split(s);
             while (parts.length > 1) {
                 parts.pop();
@@ -71,12 +57,15 @@ module.exports = function (url, limit) {
         parts = path.split("/");
         while (parts.length > 1) {
             var lastPart = parts.pop();
-            var dashParts = lastPart.split("-");
-            while (dashParts.length > 1) {
-                dashParts.pop();
-                href = buildHref(host, parts.join("/") + "/" + dashParts.join("-")) + "-\u2026";
-                if (href.length <= limit) {
-                    return proto + href;
+            s = closestDivider(lastPart, ["-", "_"]);
+            if (s !== null) {
+                parts1 = lastPart.split(s);
+                while (parts1.length > 1) {
+                    parts1.pop();
+                    href = buildHref(host, parts.join("/") + "/" + parts1.join(s)) + s + "\u2026";
+                    if (href.length <= limit) {
+                        return proto + href;
+                    }
                 }
             }
             href = buildHref(host, parts.join("/")) + "/\u2026";
@@ -95,4 +84,19 @@ function buildHref(host, path, query, hash) {
         + ((path || query || hash) ? "/" + path : "")
         + (query ? "?" + query : "")
         + (hash ? "#" + hash : "");
+}
+
+function closestDivider(text, dividers) {
+    var positions = dividers
+        .map(function (d) { return [d, text.indexOf(d)]; })
+        .filter(function (p) { return p[1] >= 0; })
+        .sort(function (a, b) {
+            if (a[1] < b[1]) return -1;
+            if (a[1] > b[1]) return 1;
+            return 0;
+        });
+
+    if (positions.length == 0) return null;
+
+    return positions[0][0];
 }
