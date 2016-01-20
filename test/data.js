@@ -282,5 +282,25 @@ module.exports = [
         result: [
             {type: "link", text: "https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#", url: "https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#"}
         ]
+    },
+    {
+        text: 'ff.net+БФ',
+        result: [
+            {type: "link", text: "ff.net", url: "http://ff.net/"},
+            {type: "text", text: "+БФ"}
+        ]
+    },
+    {
+        text: 'ff.net/+БФ',
+        result: [
+            {type: "link", text: "ff.net/+БФ", url: "http://ff.net/+БФ"}
+        ]
+    },
+    {
+        text: 'ff.net:8080+БФ',
+        result: [
+            {type: "link", text: "ff.net:8080", url: "http://ff.net:8080/"},
+            {type: "text", text: "+БФ"}
+        ]
     }
 ];
