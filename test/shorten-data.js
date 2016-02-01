@@ -11,5 +11,6 @@ module.exports = [
     "http://ezhikezhik.ru/reviews/amir-tagiev-esli-rebenku-ne-khvataet-obshcheniya-s-toboi-tvoya-vechnaya-rabota-i-zanyatost-vo-imya-ego-budushchego-nikomu-ne-nuzhnoe",
     "http://retromap.ru/m.php#l=0120090&r=081823&z=13&y=55.784687&x=37.567395",
     "http://retromap.ru/m.php#sds/ddgfd/gdfdh/",
-    "http://www.plam.ru/psiholog/psihoterapija_novogo_reshenija_teorija_i_praktika/p6.php"
+    "http://www.plam.ru/psiholog/psihoterapija_novogo_reshenija_teorija_i_praktika/p6.php",
+    "https://interpreted.dirty.ru/perevod-kak-i-zachem-spacex-koloniziruet-mars-glava-1-istoriia-liudei-i-kosmosa-821150/"
 ];
