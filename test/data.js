@@ -302,5 +302,12 @@ module.exports = [
             {type: "link", text: "ff.net:8080", url: "http://ff.net:8080/"},
             {type: "text", text: "+БФ"}
         ]
+    },
+    // CP1251
+    {
+        text: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0",
+        result: [
+            {type: "link", text: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0", url: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0"}
+        ]
     }
 ];

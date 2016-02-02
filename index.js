@@ -74,7 +74,11 @@ URLFinder.prototype.parse = function (text) {
                     });
                 } else {
                     // beautify url
-                    t = decodeURIComponent(f.match);
+                    t = f.match;
+                    try {
+                        t = decodeURIComponent(t);
+                    } catch (e) {
+                    }
                     m = /^(\w+:\/\/)?([^\/]+)(.*)/.exec(t);
                     t = (m[1] ? m[1] : "") + punycode.toUnicode(m[2]) + m[3];
 
