@@ -309,5 +309,11 @@ module.exports = [
         result: [
             {type: "link", text: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0", url: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0"}
         ]
+    },
+    {
+        text: "seminarist@lj:",
+        result: [
+            {type: "text", text: "seminarist@lj:"}
+        ]
     }
 ];
