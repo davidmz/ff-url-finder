@@ -315,5 +315,11 @@ module.exports = [
         result: [
             {type: "text", text: "seminarist@lj:"}
         ]
+    },
+    {
+        text: "john+smith@gmail.com",
+        result: [
+            {type: "email", text: "john+smith@gmail.com", address: "john+smith@gmail.com"}
+        ]
     }
 ];
