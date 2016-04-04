@@ -66,7 +66,7 @@ URLFinder.prototype.parse = function (text) {
 
             } else if (f.type === "url") {
                 m = /^\w+:\/\/([^\/]+)(.*)/.exec(f.url);
-                if (self.localDomains.indexOf(m[1].toLowerCase()) !== -1) {
+                if (m !== null && self.localDomains.indexOf(m[1].toLowerCase()) !== -1) {
                     result.push({
                         type: "localLink",
                         text: f.match,
