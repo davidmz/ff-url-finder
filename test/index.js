@@ -8,6 +8,7 @@ var finder = new URLFinder(["ru", "com", "net", "org", "рф"], ["freefeed.net",
 describe('Parser', function () {
     testData.forEach(function (task) {
         it('parses `' + task.text + '`', function () {
+            finder.withHashTags = !!task.withHashTags;
             finder.parse(task.text).should.deep.equal(task.result);
         });
     });

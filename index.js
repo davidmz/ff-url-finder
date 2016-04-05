@@ -6,13 +6,16 @@ var urlReString = "\\b(" +
     "|([a-zа-я0-9][a-zа-я0-9-]*\\.)+($TLD$xn--[a-z0-9]+)(?::\\d+)?(?:/[^\\s<>]*)?" +
     ")" +
     "|([a-z0-9\\.\\&\\~\\!\\%_+-]+@(?:[a-zа-я0-9-]+\\.)+[a-zа-я0-9-]+)\\b" +
-    "|\\B@([a-z0-9]+(-[a-z0-9]+)*)";
+    "|\\B@([a-z0-9]+(?:-[a-z0-9]+)*)" +
+    "|\\B#([a-z0-9\\u0430-\\u044f\\u0451_-]+(?:-[a-z0-9\\u0430-\\u044f\\u0451_-]+)*)"; // latin + russian cyrillic + digits + '_' + '-'
+
 var finalPuncts = /[\x21\x22\x24\x25\x27-\x2a\x2c\x2e\x3a-\x3f\x5b-\x60\x7b-\x7e\u2026]+$/; // Base latin punctuation except '/', '-', '+', '#' and '&' include ellipsis
 
 function URLFinder(tlDomains, localDomains) {
     var tldString = tlDomains ? tlDomains.join("|") + "|" : "";
     this.localDomains = localDomains || [];
     this.urlRe = new RegExp(urlReString.replace("$TLD$", tldString), "ig");
+    this.withHashTags = false;
 }
 
 URLFinder.shorten = shorten;
@@ -53,6 +56,20 @@ URLFinder.prototype.parse = function (text) {
                     text: f.match,
                     username: f.match.substr(1)
                 });
+
+            } else if (f.type === "hashTag") {
+                if (self.withHashTags) {
+                    result.push({
+                        type: "hashTag",
+                        text: f.match,
+                        hashTag: f.match.substr(1)
+                    });
+                } else {
+                    result.push({
+                        type: "text",
+                        text: f.match
+                    });
+                }
 
             } else if (f.type === "email") {
                 // beautify domain
@@ -117,6 +134,8 @@ URLFinder.prototype.tokenize = function (text) {
             f.type = "email";
         } else if (found[7]) {
             f.type = "atLink";
+        } else if (found[8]) {
+            f.type = "hashTag";
         }
 
         if (f.type === "url" && !f.withProtocol && f.pos > 0 && text.charAt(f.pos - 1) === ".") {

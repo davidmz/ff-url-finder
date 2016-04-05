@@ -321,5 +321,37 @@ module.exports = [
         result: [
             {type: "email", text: "john+smith@gmail.com", address: "john+smith@gmail.com"}
         ]
+    },
+    {
+        text: "one #two three",
+        result: [
+            {type: "text", text: "one "},
+            {type: "text", text: "#two"},
+            {type: "text", text: " three"}
+        ]
+    },
+    {
+        text: "one #two three",
+        withHashTags: true,
+        result: [
+            {type: "text", text: "one "},
+            {type: "hashTag", text: "#two", hashTag: "two"},
+            {type: "text", text: " three"}
+        ]
+    },
+    {
+        text: "#кошка-мышка-Ё-",
+        withHashTags: true,
+        result: [
+            {type: "hashTag", text: "#кошка-мышка-Ё-", hashTag: "кошка-мышка-Ё-"}
+        ]
+    },
+    {
+        text: "#кошка-λ",
+        withHashTags: true,
+        result: [
+            {type: "hashTag", text: "#кошка-", hashTag: "кошка-"},
+            {type: "text", text: "λ"}
+        ]
     }
 ];
