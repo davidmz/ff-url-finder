@@ -1,13 +1,16 @@
 var punycode = require("punycode");
 var shorten = require("./shorten");
 
+// see hashtag-syntax.md
+var hashtagWord = /[^\u0000-\u0020\u007F\u0080-\u00A0\u0021-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u007E\u00A1-\u00BF\u00D7\u00F7\u2000\u206F]+/.source;
+
 var urlReString = "\\b(" +
     "((https?|ftp):\\/\\/|www\\.)[^\\s<>]+" +
     "|([a-zа-я0-9][a-zа-я0-9-]*\\.)+($TLD$xn--[a-z0-9]+)(?::\\d+)?(?:/[^\\s<>]*)?" +
     ")" +
     "|([a-z0-9\\.\\&\\~\\!\\%_+-]+@(?:[a-zа-я0-9-]+\\.)+[a-zа-я0-9-]+)\\b" +
     "|\\B@([a-z0-9]+(?:-[a-z0-9]+)*)" +
-    "|\\B#([a-z0-9\\u0430-\\u044f\\u0451_-]+)"; // latin + russian cyrillic + digits + '_' + '-'
+    "|\\B#(" + hashtagWord + "(?:[_-]" + hashtagWord + ")*)";
 
 var finalPuncts = /[\x21\x22\x24\x25\x27-\x2a\x2c\x2e\x3a-\x3f\x5b-\x60\x7b-\x7e\u2026]+$/; // Base latin punctuation except '/', '-', '+', '#' and '&' include ellipsis
 

@@ -343,15 +343,42 @@ module.exports = [
         text: "#кошка-мышка-Ё-",
         withHashTags: true,
         result: [
-            {type: "hashTag", text: "#кошка-мышка-Ё-", hashTag: "кошка-мышка-Ё-"}
+            {type: "hashTag", text: "#кошка-мышка-Ё", hashTag: "кошка-мышка-Ё"},
+            {type: "text", text: "-"}
         ]
     },
     {
         text: "#кошка-λ",
         withHashTags: true,
         result: [
-            {type: "hashTag", text: "#кошка-", hashTag: "кошка-"},
-            {type: "text", text: "λ"}
+            {type: "hashTag", text: "#кошка-λ", hashTag: "кошка-λ"}
+        ]
+    },
+    {
+        text: "23#кошка",
+        withHashTags: true,
+        result: [
+            {type: "text", text: "23#кошка"}
+        ]
+    },
+    {
+        text: "23 #-кошка #_- #αβγ⅛- 32",
+        withHashTags: true,
+        result: [
+            {type: "text", text: "23 #-кошка #_- "},
+            {type: "hashTag", text: "#αβγ⅛", hashTag: "αβγ⅛"},
+            {type: "text", text: "- 32"}
+        ]
+    },
+    {
+        text: "Например, он ловит #obrázek, но не ловит #obrázek.",
+        withHashTags: true,
+        result: [
+            {type: "text", text: "Например, он ловит "},
+            {type: "hashTag", text: "#obrázek", hashTag: "obrázek"},
+            {type: "text", text: ", но не ловит "},
+            {type: "hashTag", text: "#obrázek", hashTag: "obrázek"},
+            {type: "text", text: "."}
         ]
     }
 ];
