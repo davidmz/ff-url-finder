@@ -380,5 +380,24 @@ module.exports = [
             {type: "hashTag", text: "#obrázek", hashTag: "obrázek"},
             {type: "text", text: "."}
         ]
+    },
+    {
+        text: "URL типа freefeed.net//anything site.net//anything",
+        result: [
+            {type: "text", text: "URL типа "},
+            {type: "localLink", text: "freefeed.net//anything", uri: "/.//anything"},
+            {type: "text", text: " "},
+            {type: "link", text: "site.net//anything", url: "http://site.net//anything"}
+        ]
+    },
+    {
+        text: "https://freefeed.net/ m.freefeed.net m.freefeed.net/xxx",
+        result: [
+            {type: "link", text: "https://freefeed.net/", url: "https://freefeed.net/"},
+            {type: "text", text: " "},
+            {type: "link", text: "m.freefeed.net", url: "http://m.freefeed.net/"},
+            {type: "text", text: " "},
+            {type: "localLink", text: "m.freefeed.net/xxx", uri: "/xxx"}
+        ]
     }
 ];

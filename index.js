@@ -86,11 +86,11 @@ URLFinder.prototype.parse = function (text) {
 
             } else if (f.type === "url") {
                 m = /^\w+:\/\/([^\/]+)(.*)/.exec(f.url);
-                if (m !== null && self.localDomains.indexOf(m[1].toLowerCase()) !== -1) {
+                if (m !== null && self.localDomains.indexOf(m[1].toLowerCase()) !== -1 && m[2] !== "" && m[2] !== "/") {
                     result.push({
                         type: "localLink",
                         text: f.match,
-                        uri: m[2]
+                        uri: m[2].replace(/^\/\//, "/.//")
                     });
                 } else {
                     // beautify url
