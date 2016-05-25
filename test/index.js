@@ -9,6 +9,7 @@ describe('Parser', function () {
     testData.forEach(function (task) {
         it('parses `' + task.text + '`', function () {
             finder.withHashTags = !!task.withHashTags;
+            finder.withArrows = !!task.withArrows;
             finder.parse(task.text).should.deep.equal(task.result);
         });
     });

@@ -84,29 +84,49 @@ module.exports = [
     {
         text: "https://map.what3words.com/биоробот.мясной.малиновый",
         result: [
-            {type: "link", text: "https://map.what3words.com/биоробот.мясной.малиновый", url: "https://map.what3words.com/биоробот.мясной.малиновый"}
+            {
+                type: "link",
+                text: "https://map.what3words.com/биоробот.мясной.малиновый",
+                url: "https://map.what3words.com/биоробот.мясной.малиновый"
+            }
         ]
     },
     {
         text: "вот эти http://замкинаокна.рф/p49195244-ogranichitel-otkryvaniya-okna.html/ от этих xn--80aaazglcmlcj.xn--p1ai/p49838778-blokirator-okna-bsl.html",
         result: [
             {type: "text", text: "вот эти "},
-            {type: "link", text: "http://замкинаокна.рф/p49195244-ogranichitel-otkryvaniya-okna.html/", url: "http://замкинаокна.рф/p49195244-ogranichitel-otkryvaniya-okna.html/"},
+            {
+                type: "link",
+                text: "http://замкинаокна.рф/p49195244-ogranichitel-otkryvaniya-okna.html/",
+                url: "http://замкинаокна.рф/p49195244-ogranichitel-otkryvaniya-okna.html/"
+            },
             {type: "text", text: " от этих "},
-            {type: "link", text: "замкинаокна.рф/p49838778-blokirator-okna-bsl.html", url: "http://xn--80aaazglcmlcj.xn--p1ai/p49838778-blokirator-okna-bsl.html"}
+            {
+                type: "link",
+                text: "замкинаокна.рф/p49838778-blokirator-okna-bsl.html",
+                url: "http://xn--80aaazglcmlcj.xn--p1ai/p49838778-blokirator-okna-bsl.html"
+            }
         ]
     },
     {
         text: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html",
         result: [
-            {type: "link", text: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html", url: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html"}
+            {
+                type: "link",
+                text: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html",
+                url: "http://[FEDC:BA98:7654:3210:FEDC:BA98:7654:3210]:80/index.html"
+            }
         ]
     },
     {
         text: "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2015)",
         // urldecode for humans
         result: [
-            {type: "link", text: "https://ru.wikipedia.org/wiki/Территория_(фильм,_2015)", url: "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2015)"}
+            {
+                type: "link",
+                text: "https://ru.wikipedia.org/wiki/Территория_(фильм,_2015)",
+                url: "https://ru.wikipedia.org/wiki/%D0%A2%D0%B5%D1%80%D1%80%D0%B8%D1%82%D0%BE%D1%80%D0%B8%D1%8F_(%D1%84%D0%B8%D0%BB%D1%8C%D0%BC,_2015)"
+            }
         ]
     },
     {
@@ -121,13 +141,20 @@ module.exports = [
         text: "aa http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7 bb http://xn--vi8hiv.ws/%F0%9F%8D%96%F0%9F%8D%93%F0%9F%8D%92%F0%9F%8D%B1%F0%9F%93%A6%F0%9F%91%91%F0%9F%8E%A8%F0%9F%8E%B7 cc",
         result: [
             {type: "text", text: "aa "},
-            {type: "link", text: "http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7", url: "http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7"},
+            {
+                type: "link",
+                text: "http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7",
+                url: "http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7"
+            },
             {type: "text", text: " bb "},
-            {type: "link", text: "http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7", url: "http://xn--vi8hiv.ws/%F0%9F%8D%96%F0%9F%8D%93%F0%9F%8D%92%F0%9F%8D%B1%F0%9F%93%A6%F0%9F%91%91%F0%9F%8E%A8%F0%9F%8E%B7"},
+            {
+                type: "link",
+                text: "http://\uD83C\uDF55\uD83D\uDCA9.ws/\uD83C\uDF56\uD83C\uDF53\uD83C\uDF52\uD83C\uDF71\uD83D\uDCE6\uD83D\uDC51\uD83C\uDFA8\uD83C\uDFB7",
+                url: "http://xn--vi8hiv.ws/%F0%9F%8D%96%F0%9F%8D%93%F0%9F%8D%92%F0%9F%8D%B1%F0%9F%93%A6%F0%9F%91%91%F0%9F%8E%A8%F0%9F%8E%B7"
+            },
             {type: "text", text: " cc"}
         ]
     },
-
 
 
     // linkhum cases
@@ -154,9 +181,17 @@ module.exports = [
         text: "it's a movie: https://en.wikipedia.org/wiki/Hours_(2013_film) but it works with just parens (https://www.youtube.com/watch?v=Q9Dv4Hmf_O8)",
         result: [
             {type: "text", text: "it's a movie: "},
-            {type: "link", text: "https://en.wikipedia.org/wiki/Hours_(2013_film)", url: "https://en.wikipedia.org/wiki/Hours_(2013_film)"},
+            {
+                type: "link",
+                text: "https://en.wikipedia.org/wiki/Hours_(2013_film)",
+                url: "https://en.wikipedia.org/wiki/Hours_(2013_film)"
+            },
             {type: "text", text: " but it works with just parens ("},
-            {type: "link", text: "https://www.youtube.com/watch?v=Q9Dv4Hmf_O8", url: "https://www.youtube.com/watch?v=Q9Dv4Hmf_O8"},
+            {
+                type: "link",
+                text: "https://www.youtube.com/watch?v=Q9Dv4Hmf_O8",
+                url: "https://www.youtube.com/watch?v=Q9Dv4Hmf_O8"
+            },
             {type: "text", text: ")"}
         ]
     },
@@ -174,7 +209,7 @@ module.exports = [
             {
                 type: "link",
                 text: "http://www.booking.com/searchresults.html?sid=79b5eeb441120b08fcd3ebe467b0a0b8;dcid=1;bb_asr=2&class_interval=1&csflt={}&dest_id=-2167973&dest_type=city&dtdisc=0&group_adults=2&group_children=0&hlrd=0&hyb_red=0&idf=1&inac=0&nha_red=0&no_rooms=1&offset=0&redirected_from_city=0&redirected_from_landmark=0&redirected_from_region=0&review_score_group=empty&score_min=0&si=ai,co,ci,re,di&src=index&ss=Lisbon, Lisbon Region, Portugal&ss_all=0&ss_raw=Lisbon&ssb=empty&sshis=0&",
-                url:  "http://www.booking.com/searchresults.html?sid=79b5eeb441120b08fcd3ebe467b0a0b8;dcid=1;bb_asr=2&class_interval=1&csflt=%7B%7D&dest_id=-2167973&dest_type=city&dtdisc=0&group_adults=2&group_children=0&hlrd=0&hyb_red=0&idf=1&inac=0&nha_red=0&no_rooms=1&offset=0&redirected_from_city=0&redirected_from_landmark=0&redirected_from_region=0&review_score_group=empty&score_min=0&si=ai,co,ci,re,di&src=index&ss=Lisbon,%20Lisbon%20Region,%20Portugal&ss_all=0&ss_raw=Lisbon&ssb=empty&sshis=0&"
+                url: "http://www.booking.com/searchresults.html?sid=79b5eeb441120b08fcd3ebe467b0a0b8;dcid=1;bb_asr=2&class_interval=1&csflt=%7B%7D&dest_id=-2167973&dest_type=city&dtdisc=0&group_adults=2&group_children=0&hlrd=0&hyb_red=0&idf=1&inac=0&nha_red=0&no_rooms=1&offset=0&redirected_from_city=0&redirected_from_landmark=0&redirected_from_region=0&review_score_group=empty&score_min=0&si=ai,co,ci,re,di&src=index&ss=Lisbon,%20Lisbon%20Region,%20Portugal&ss_all=0&ss_raw=Lisbon&ssb=empty&sshis=0&"
             }
         ]
     },
@@ -232,7 +267,11 @@ module.exports = [
     {
         text: "https://ru.wikipedia.org/wiki/Эффект_Даннинга_—_Крюгера",
         result: [
-            {type: "link", text: "https://ru.wikipedia.org/wiki/Эффект_Даннинга_—_Крюгера", url: "https://ru.wikipedia.org/wiki/Эффект_Даннинга_—_Крюгера"}
+            {
+                type: "link",
+                text: "https://ru.wikipedia.org/wiki/Эффект_Даннинга_—_Крюгера",
+                url: "https://ru.wikipedia.org/wiki/Эффект_Даннинга_—_Крюгера"
+            }
         ]
     },
     {
@@ -247,7 +286,11 @@ module.exports = [
         text: 'anchors: https://github.com/octopress/ink#usage',
         result: [
             {type: "text", text: "anchors: "},
-            {type: "link", text: "https://github.com/octopress/ink#usage", url: "https://github.com/octopress/ink#usage"}
+            {
+                type: "link",
+                text: "https://github.com/octopress/ink#usage",
+                url: "https://github.com/octopress/ink#usage"
+            }
         ]
     },
     {
@@ -274,13 +317,21 @@ module.exports = [
     {
         text: 'https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-',
         result: [
-            {type: "link", text: "https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-", url: "https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-"}
+            {
+                type: "link",
+                text: "https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-",
+                url: "https://www.youtube.com/playlist?list=PLoN0DWDChjH9sPVc8m-aXdxmeMxgT1jG-"
+            }
         ]
     },
     {
         text: 'https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#',
         result: [
-            {type: "link", text: "https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#", url: "https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#"}
+            {
+                type: "link",
+                text: "https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#",
+                url: "https://docs.google.com/document/d/1JcBOGg7rmAk9wOtSN9r-PFnCZx1zVIHNuLB2zT8LmGQ/edit#"
+            }
         ]
     },
     {
@@ -307,7 +358,11 @@ module.exports = [
     {
         text: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0",
         result: [
-            {type: "link", text: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0", url: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0"}
+            {
+                type: "link",
+                text: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0",
+                url: "http://www.multitran.ru/c/m.exe?s=%F2%F0%EE%E9%EA%E0"
+            }
         ]
     },
     {
@@ -325,9 +380,7 @@ module.exports = [
     {
         text: "one #two three",
         result: [
-            {type: "text", text: "one "},
-            {type: "text", text: "#two"},
-            {type: "text", text: " three"}
+            {type: "text", text: "one #two three"}
         ]
     },
     {
@@ -398,6 +451,40 @@ module.exports = [
             {type: "link", text: "m.freefeed.net", url: "http://m.freefeed.net/"},
             {type: "text", text: " "},
             {type: "localLink", text: "m.freefeed.net/xxx", uri: "/xxx"}
+        ]
+    },
+    {
+        text: "^,^^ ↑↑↑ !!!",
+        result: [
+            {type: "text", text: "^,^^ ↑↑↑ !!!"}
+        ]
+    },
+    {
+        text: "^,^^,↑↑↑!!! ^.",
+        withArrows: true,
+        result: [
+            {type: "arrow", text: "^", count: 1},
+            {type: "text", text: ","},
+            {type: "arrow", text: "^^", count: 2},
+            {type: "text", text: ","},
+            {type: "arrow", text: "↑↑↑", count: 3},
+            {type: "text", text: "!!! "},
+            {type: "arrow", text: "^", count: 1},
+            {type: "text", text: "."}
+        ]
+    },
+    {
+        text: "раз^W два",
+        withArrows: true,
+        result: [
+            {type: "text", text: "раз^W два"}
+        ]
+    },
+    {
+        text: "=^-^= 10^21Bq например^this (=^・^=) >^_^< (^0_0^)",
+        withArrows: true,
+        result: [
+            {type: "text", text: "=^-^= 10^21Bq например^this (=^・^=) >^_^< (^0_0^)"}
         ]
     }
 ];

@@ -10,7 +10,8 @@ var urlReString = "\\b(" +
     ")" +
     "|([a-z0-9\\.\\&\\~\\!\\%_+-]+@(?:[a-zа-я0-9-]+\\.)+[a-zа-я0-9-]+)\\b" +
     "|\\B@([a-z0-9]+(?:-[a-z0-9]+)*)" +
-    "|\\B#(" + hashtagWord + "(?:[_-]" + hashtagWord + ")*)";
+    "|\\B#(" + hashtagWord + "(?:[_-]" + hashtagWord + ")*)" +
+    "|(\u2191+|\\^+)";
 
 var finalPuncts = /[\x21\x22\x24\x25\x27-\x2a\x2c\x2e\x3a-\x3f\x5b-\x60\x7b-\x7e\u2026]+$/; // Base latin punctuation except '/', '-', '+', '#' and '&' include ellipsis
 
@@ -19,6 +20,7 @@ function URLFinder(tlDomains, localDomains) {
     this.localDomains = localDomains || [];
     this.urlRe = new RegExp(urlReString.replace("$TLD$", tldString), "ig");
     this.withHashTags = false;
+    this.withArrows = false;
 }
 
 URLFinder.shorten = shorten;
@@ -74,6 +76,20 @@ URLFinder.prototype.parse = function (text) {
                     });
                 }
 
+            } else if (f.type === "arrow") {
+                if (self.withArrows) {
+                    result.push({
+                        type: "arrow",
+                        text: f.match,
+                        count: f.match.length
+                    });
+                } else {
+                    result.push({
+                        type: "text",
+                        text: f.match
+                    });
+                }
+
             } else if (f.type === "email") {
                 // beautify domain
                 m = /^([^@]+@)(.+)/.exec(f.match);
@@ -119,7 +135,7 @@ URLFinder.prototype.parse = function (text) {
         });
     }
 
-    return result;
+    return mergeTexts(result);
 };
 
 URLFinder.prototype.tokenize = function (text) {
@@ -139,6 +155,11 @@ URLFinder.prototype.tokenize = function (text) {
             f.type = "atLink";
         } else if (found[8]) {
             f.type = "hashTag";
+        } else if (found[9]) {
+            f.type = "arrow";
+            if (!checkArrow(f, text)) {
+                continue;
+            }
         }
 
         if (f.type === "url" && !f.withProtocol && f.pos > 0 && text.charAt(f.pos - 1) === ".") {
@@ -190,6 +211,11 @@ function trimPunct(f) {
     return f;
 }
 
+/**
+ *
+ * @param {string} text
+ * @return {number}
+ */
 function bracketBalance(text) {
     var brackets = {
             "(": 1,
@@ -205,6 +231,43 @@ function bracketBalance(text) {
         if (c in brackets) b += brackets[c];
     }
     return b;
+}
+
+function checkArrow(f, text) {
+    if (
+        f.match.charAt(0) == "\u2191"
+        || f.match.length > 1
+        || f.pos == 0 || f.pos == text.length - 1
+    ) {
+        return true;
+    }
+
+    var prevChar = text.charAt(f.pos - 1),
+        nextChar = text.charAt(f.pos + 1);
+
+    if (nextChar == "W") {
+        return false;
+    }
+
+    var re = /[\s,.]/;
+
+    return (re.test(prevChar) || re.test(nextChar));
+}
+
+/**
+ * merge text nodes
+ * @param {Array} nodes
+ * @return {Array}
+ */
+function mergeTexts(nodes) {
+    return nodes.reduce(function (res, node) {
+        if (node.type === "text" && res.length > 0 && res[res.length - 1].type === "text") {
+            res[res.length - 1].text += node.text;
+        } else {
+            res.push(node);
+        }
+        return res;
+    }, []);
 }
 
 module.exports = URLFinder;
