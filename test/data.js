@@ -486,5 +486,13 @@ module.exports = [
         result: [
             {type: "text", text: "=^-^= 10^21Bq например^this (=^・^=) >^_^< (^0_0^)"}
         ]
+    },
+    {
+        text: "abc «http://example.com/»",
+        result: [
+            {type: "text", text: "abc «"},
+            {type: "link", text: "http://example.com/", url: "http://example.com/"},
+            {type: "text", text: "»"}
+        ]
     }
 ];

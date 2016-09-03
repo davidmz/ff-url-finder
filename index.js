@@ -13,7 +13,7 @@ var urlReString = "\\b(" +
     "|\\B#(" + hashtagWord + "(?:[_-]" + hashtagWord + ")*)" +
     "|(\u2191+|\\^+)";
 
-var finalPuncts = /[\x21\x22\x24\x25\x27-\x2a\x2c\x2e\x3a-\x3f\x5b-\x60\x7b-\x7e\u2026]+$/; // Base latin punctuation except '/', '-', '+', '#' and '&' include ellipsis
+var finalPuncts = /[\x21\x22\x24\x25\x27-\x2a\x2c\x2e\x3a-\x3f\x5b-\x60\x7b-\x7e\u2026\xAB\xBB\u2018-\u201F]+$/; // Base latin punctuation except '/', '-', '+', '#' and '&' include ellipsis and quotes
 
 function URLFinder(tlDomains, localDomains) {
     var tldString = tlDomains ? tlDomains.join("|") + "|" : "";
