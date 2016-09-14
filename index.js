@@ -9,7 +9,7 @@ var urlReString = "\\b(" +
     "|([a-zа-я0-9][a-zа-я0-9-]*\\.)+($TLD$xn--[a-z0-9]+)(?::\\d+)?(?:/[^\\s<>]*)?" +
     ")" +
     "|([a-z0-9\\.\\&\\~\\!\\%_+-]+@(?:[a-zа-я0-9-]+\\.)+[a-zа-я0-9-]+)\\b" +
-    "|\\B@([a-z0-9]+(?:-[a-z0-9]+)*)" +
+    "|\\B@([a-z0-9]+(?:[_-][a-z0-9]+)*)" +
     "|\\B#(" + hashtagWord + "(?:[_-]" + hashtagWord + ")*)" +
     "|(\u2191+|\\^+)";
 
@@ -56,11 +56,18 @@ URLFinder.prototype.parse = function (text) {
                 });
             }
             if (f.type === "atLink") {
-                result.push({
-                    type: "atLink",
-                    text: f.match,
-                    username: f.match.substr(1)
-                });
+                if (f.match.indexOf('_') === -1) {
+                    result.push({
+                        type: "atLink",
+                        text: f.match,
+                        username: f.match.substr(1)
+                    });
+                } else {
+                    result.push({
+                        type: "text",
+                        text: f.match
+                    });
+                }
 
             } else if (f.type === "hashTag") {
                 if (self.withHashTags) {

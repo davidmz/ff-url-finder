@@ -494,5 +494,11 @@ module.exports = [
             {type: "link", text: "http://example.com/", url: "http://example.com/"},
             {type: "text", text: "»"}
         ]
+    },
+    {
+        text: "RT @okay_awesome",
+        result: [
+            {type: "text", text: "RT @okay_awesome"}
+        ]
     }
 ];
