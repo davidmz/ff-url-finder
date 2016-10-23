@@ -500,5 +500,11 @@ module.exports = [
         result: [
             {type: "text", text: "RT @okay_awesome"}
         ]
+    },
+    {
+        text: "ru.wikipedia.org/wiki/Колода_«Русский_стиль»",
+        result: [
+            {type: "link", text: "ru.wikipedia.org/wiki/Колода_«Русский_стиль»", url: "http://ru.wikipedia.org/wiki/Колода_«Русский_стиль»"}
+        ]
     }
 ];

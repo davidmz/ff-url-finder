@@ -187,7 +187,7 @@ function trimPunct(f) {
     if (m === null) return f;
     var fin = m[0];
 
-    if (!/[)}\]]/.test(fin)) {
+    if (!/[)}\]»]/.test(fin)) {
         // no closes brackets, just cut it all
         f.match = f.match.substr(0, f.match.length - fin.length);
         return f;
@@ -200,7 +200,7 @@ function trimPunct(f) {
         return f;
     }
 
-    m = /[^)}\]]+$/.exec(fin);
+    m = /[^)}\]»]+$/.exec(fin);
     if (m !== null) {
         // trim non-brackets
         fin = fin.substr(0, fin.length - m[0].length);
@@ -227,10 +227,12 @@ function bracketBalance(text) {
     var brackets = {
             "(": 1,
             ")": -1,
-            "[": 100,
-            "]": -100,
-            "{": 10000,
-            "}": -10000
+            "[": 10,
+            "]": -10,
+            "{": 100,
+            "}": -100,
+            "«": 1000,
+            "»": -1000
         },
         i, c, b = 0;
     for (i = 0; i < text.length; i++) {
