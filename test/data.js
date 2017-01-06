@@ -20,6 +20,12 @@ module.exports = [
         ]
     },
     {
+        text: "hxxp://google.com",
+        result: [
+            {type: "text", text: "hxxp://google.com"}
+        ]
+    },
+    {
         text: "aa (google.com) bb",
         result: [
             {type: "text", text: "aa ("},
