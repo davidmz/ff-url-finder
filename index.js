@@ -4,8 +4,9 @@ var shorten = require("./shorten");
 // see hashtag-syntax.md
 var hashtagWord = /[^\u0000-\u0020\u007F\u0080-\u00A0\u0021-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u007E\u00A1-\u00BF\u00D7\u00F7\u2000\u206F]+/.source;
 
+var allowedProtocols = /https?|ftp/i
 var urlReString = "\\b(" +
-    "((https?|ftp):\\/\\/|www\\.)[^\\s<>]+" +
+    "((\\w+):\\/\\/|www\\.)[^\\s<>]+" +
     "|([a-zа-я0-9][a-zа-я0-9-]*\\.)+($TLD$xn--[a-z0-9]+)(?::\\d+)?(?:/[^\\s<>]*)?" +
     ")" +
     "|([a-z0-9\\.\\&\\~\\!\\%_+-]+@(?:[a-zа-я0-9-]+\\.)+[a-zа-я0-9-]+)\\b" +
@@ -150,6 +151,9 @@ URLFinder.prototype.tokenize = function (text) {
 
     this.urlRe.lastIndex = 0;
     while ((found = this.urlRe.exec(text)) !== null) {
+        if (!!found[2] && !allowedProtocols.test(found[2]) && found[2].toLowerCase() !== "www.") {
+            continue;
+        }
         var f = {
             match: found[0],
             pos: found.index,
