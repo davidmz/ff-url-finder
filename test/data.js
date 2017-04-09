@@ -512,5 +512,17 @@ module.exports = [
         result: [
             {type: "link", text: "ru.wikipedia.org/wiki/Колода_«Русский_стиль»", url: "http://ru.wikipedia.org/wiki/Колода_«Русский_стиль»"}
         ]
+    },
+    {
+        text: "freefeed.net@gmail.com",
+        result: [
+            {type: "email", text: "freefeed.net@gmail.com", address: "freefeed.net@gmail.com"}
+        ]
+    },
+    {
+        text: "www.freefeed.net@gmail.com",
+        result: [
+            {type: "email", text: "www.freefeed.net@gmail.com", address: "www.freefeed.net@gmail.com"}
+        ]
     }
 ];

@@ -4,10 +4,11 @@ var shorten = require("./shorten");
 // see hashtag-syntax.md
 var hashtagWord = /[^\u0000-\u0020\u007F\u0080-\u00A0\u0021-\u002F\u003A-\u0040\u005B-\u0060\u007B-\u007E\u00A1-\u00BF\u00D7\u00F7\u2000\u206F]+/.source;
 
-var allowedProtocols = /https?|ftp/i;
-var urlReString = "\\b(" +
-    "((\\w+):\\/\\/|www\\.)[^\\s<>]+" +
-    "|([a-zа-я0-9][a-zа-я0-9-]*\\.)+($TLD$xn--[a-z0-9]+)(?::\\d+)?(?:/[^\\s<>]*)?" +
+var allowedProtocols = /^(?:https?|ftp)$/i;
+var urlReString =
+    "\\b(" +
+    "(?:(\\w+):\\/\\/)[^\\s<>]+" +
+    "|(?:[a-zа-я0-9][a-zа-я0-9-]*\\.)+(?:$TLD$xn--[a-z0-9]+)(?!@)(?::\\d+)?(?:/[^\\s<>]*)?" +
     ")" +
     "|([a-z0-9\\.\\&\\~\\!\\%_+-]+@(?:[a-zа-я0-9-]+\\.)+[a-zа-я0-9-]+)\\b" +
     "|\\B@([a-z0-9]+(?:[_-][a-z0-9]+)*)" +
@@ -50,7 +51,7 @@ URLFinder.prototype.parse = function (text) {
         })
         .forEach(function (f) {
             var t, m;
-            if (f.pos != pos) {
+            if (f.pos !== pos) {
                 result.push({
                     type: "text",
                     text: text.substr(pos, f.pos - pos)
@@ -151,22 +152,22 @@ URLFinder.prototype.tokenize = function (text) {
 
     this.urlRe.lastIndex = 0;
     while ((found = this.urlRe.exec(text)) !== null) {
-        if (!!found[2] && !allowedProtocols.test(found[2]) && found[2].toLowerCase() !== "www.") {
+        if (!!found[2] && !allowedProtocols.test(found[2])) {
             continue;
         }
         var f = {
             match: found[0],
             pos: found.index,
-            withProtocol: !!found[2] && found[2].toLowerCase() !== "www.",
+            withProtocol: !!found[2],
             type: "url"
         };
-        if (found[6]) {
+        if (found[3]) {
             f.type = "email";
-        } else if (found[7]) {
+        } else if (found[4]) {
             f.type = "atLink";
-        } else if (found[8]) {
+        } else if (found[5]) {
             f.type = "hashTag";
-        } else if (found[9]) {
+        } else if (found[6]) {
             f.type = "arrow";
             if (!checkArrow(f, text)) {
                 continue;
@@ -248,9 +249,9 @@ function bracketBalance(text) {
 
 function checkArrow(f, text) {
     if (
-        f.match.charAt(0) == "\u2191"
+        f.match.charAt(0) === "\u2191"
         || f.match.length > 1
-        || f.pos == 0 || f.pos == text.length - 1
+        || f.pos === 0 || f.pos === text.length - 1
     ) {
         return true;
     }
@@ -258,7 +259,7 @@ function checkArrow(f, text) {
     var prevChar = text.charAt(f.pos - 1),
         nextChar = text.charAt(f.pos + 1);
 
-    if (nextChar == "W") {
+    if (nextChar === "W") {
         return false;
     }
 
