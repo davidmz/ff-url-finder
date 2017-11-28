@@ -524,5 +524,11 @@ module.exports = [
         result: [
             {type: "email", text: "www.freefeed.net@gmail.com", address: "www.freefeed.net@gmail.com"}
         ]
+    },
+    {
+        text: "www.clips.com.au",
+        result: [
+            {type: "text", text: "www.clips.com.au"}
+        ]
     }
 ];
