@@ -60,8 +60,8 @@ URLFinder.prototype.parse = function (text) {
             if (f.type === "atLink") {
                 if (f.match.indexOf('_') === -1) {
                     result.push({
-                        type: "atLink",
-                        text: f.match,
+                        type:     "atLink",
+                        text:     f.match,
                         username: f.match.substr(1)
                     });
                 } else {
@@ -74,8 +74,8 @@ URLFinder.prototype.parse = function (text) {
             } else if (f.type === "hashTag") {
                 if (self.withHashTags) {
                     result.push({
-                        type: "hashTag",
-                        text: f.match,
+                        type:    "hashTag",
+                        text:    f.match,
                         hashTag: f.match.substr(1)
                     });
                 } else {
@@ -88,8 +88,8 @@ URLFinder.prototype.parse = function (text) {
             } else if (f.type === "arrow") {
                 if (self.withArrows) {
                     result.push({
-                        type: "arrow",
-                        text: f.match,
+                        type:  "arrow",
+                        text:  f.match,
                         count: f.match.length
                     });
                 } else {
@@ -104,8 +104,8 @@ URLFinder.prototype.parse = function (text) {
                 m = /^([^@]+@)(.+)/.exec(f.match);
                 t = m[1] + punycode.toUnicode(m[2]);
                 result.push({
-                    type: "email",
-                    text: t,
+                    type:    "email",
+                    text:    t,
                     address: f.match
                 });
 
@@ -115,7 +115,7 @@ URLFinder.prototype.parse = function (text) {
                     result.push({
                         type: "localLink",
                         text: f.match,
-                        uri: m[2].replace(/^\/\//, "/.//")
+                        uri:  m[2].replace(/^\/\//, "/.//")
                     });
                 } else {
                     // beautify url
@@ -130,7 +130,7 @@ URLFinder.prototype.parse = function (text) {
                     result.push({
                         type: "link",
                         text: t,
-                        url: f.url
+                        url:  f.url
                     });
                 }
             }
@@ -156,10 +156,10 @@ URLFinder.prototype.tokenize = function (text) {
             continue;
         }
         var f = {
-            match: found[0],
-            pos: found.index,
+            match:        found[0],
+            pos:          found.index,
             withProtocol: !!found[2],
-            type: "url"
+            type:         "url"
         };
         if (found[3]) {
             f.type = "email";
@@ -230,14 +230,14 @@ function trimPunct(f) {
  */
 function bracketBalance(text) {
     var brackets = {
-            "(": 1,
-            ")": -1,
-            "[": 10,
-            "]": -10,
-            "{": 100,
-            "}": -100,
-            "«": 1000,
-            "»": -1000
+            "(":      1,
+            ")":      -1,
+            "[":      10,
+            "]":      -10,
+            "{":      100,
+            "}":      -100,
+            "\u00AB": 1000, // LEFT-POINTING DOUBLE ANGLE QUOTATION MARK («)
+            "\u00BB": -1000 // RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK (»)
         },
         i, c, b = 0;
     for (i = 0; i < text.length; i++) {
