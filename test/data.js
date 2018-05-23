@@ -530,5 +530,11 @@ module.exports = [
         result: [
             {type: "text", text: "www.clips.com.au"}
         ]
+    },
+    {
+        text: "https://www.example.com/foobar/%E2%80%A8hello-world",
+        result: [
+            {type: "link", text: "https://www.example.com/foobar/\u2028hello-world", url: "https://www.example.com/foobar/%E2%80%A8hello-world"}
+        ]
     }
 ];

@@ -124,7 +124,7 @@ URLFinder.prototype.parse = function (text) {
                         t = decodeURIComponent(t);
                     } catch (e) {
                     }
-                    m = /^(\w+:\/\/)?([^\/]+)(.*)/.exec(t);
+                    m = /^(\w+:\/\/)?([^\/]+)([^]*)/.exec(t);
                     t = (m[1] ? m[1] : "") + punycode.toUnicode(m[2]) + m[3];
 
                     result.push({
