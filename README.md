@@ -1,3 +1,5 @@
+⚠ Этот пакет больше не поддерживается, используйте https://github.com/davidmz/social-text-tokenizer
+
 # ff-url-finder
 
 Экспортирует класс `URLFinder`.
